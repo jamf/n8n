@@ -16,6 +16,9 @@ import browserslist from 'browserslist';
 import { isLocaleFile, sendLocaleUpdate } from './vite/i18n-locales-hmr-helpers';
 import { nodePopularityPlugin } from './vite/vite-plugin-node-popularity.mjs';
 
+// @jamf - added custom element prefixes for jamf mfe components
+const CUSTOM_ELEMENT_PREFIXES = ['jamf-', 'mfe-', 'feature-app-loader'];
+
 const publicPath = process.env.VUE_APP_PUBLIC_PATH || '/';
 
 const { NODE_ENV } = process.env;
@@ -117,7 +120,14 @@ const plugins: UserConfig['plugins'] = [
 			},
 		],
 	}),
-	vue(),
+	vue({
+		// @jamf - added isCustomElement for jamf mfe components
+		template: {
+			compilerOptions: {
+				isCustomElement: (tag) => CUSTOM_ELEMENT_PREFIXES.some((prefix) => tag.includes(prefix)),
+			},
+		},
+	}),
 	svgLoader({
 		svgoConfig: {
 			plugins: [

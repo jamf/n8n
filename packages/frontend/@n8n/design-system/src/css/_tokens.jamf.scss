@@ -1,0 +1,183 @@
+@mixin jamf {
+	// Primary HSL
+	// taken from --color-primary-base (#1268EC) in jamf-design-system
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--primary--h: 216;
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--primary--s: 86%;
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--primary--l: 50%;
+
+	// Primary
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--primary--shade-1: var(--color-primary-active);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--primary: var(--color-primary-base);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--primary--tint-1: var(--color-primary-active);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--primary--tint-2: var(--color-primary-subdued);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--primary--tint-3: var(--color-primary-subdued);
+
+	// Secondary (using primary colors since components use it similarly)
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--secondary--shade-1: var(--color-primary-deep);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--secondary: var(--color-primary-base);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--secondary--tint-1: var(--color-primary-subdued);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--secondary--tint-2: var(--color-primary-subdued);
+
+	// Success
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--success--shade-1: var(--color-success-deep);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--success: var(--color-success-base);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--success--tint-1: var(--color-success-active);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--success--tint-2: var(--color-green-background);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--success--tint-3: var(--color-success-subdued);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--success--tint-4: var(--color-success-secondary);
+
+	// Warning
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--warning--shade-1: var(--color-warning-deep);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--warning: var(--color-warning-base);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--warning--tint-1: var(--color-warning-subdued);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--warning--tint-2: var(--color-warning-secondary);
+
+	// Danger
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--danger--shade-1: var(--color-danger-deep);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--danger: var(--color-danger-base);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--danger--tint-1: var(--color-danger-active);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--danger--tint-2: var(--color-red-background);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--danger--tint-3: var(--color-danger-subdued);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--danger--tint-4: var(--color-danger-secondary);
+
+	// Text
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--text--shade-1: var(--color-font-base);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--text: var(--color-font-secondary);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--text--tint-1: var(--color-font-tertiary);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--text--tint-2: var(--color-font-tertiary);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--text--tint-3: var(--color-font-inverse);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--text--danger: var(--color-font-danger);
+
+	// Foreground (borders/dividers)
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--foreground--shade-2: var(--color-border-active);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--foreground--shade-1: var(--color-border-base);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--foreground: var(--color-border-secondary);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--foreground--tint-1: var(--color-structure-tertiary);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--foreground--tint-2: var(--color-structure-base);
+
+	// Background
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--background--shade-2: var(--color-structure-neutral);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--background--shade-1: var(--color-structure-tertiary);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--background: var(--color-structure-secondary);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--background--light-1: var(--color-structure-secondary);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--background--light-2: var(--color-structure-base);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--background--light-3: var(--color-structure-base);
+
+	// Shadow
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--shadow: 0 2px 4px var(--color-shadow-base), 0 0 6px rgba(0, 0, 0, 0.04);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--shadow--dark: 0 2px 4px var(--color-shadow-base), 0 0 6px rgba(0, 0, 0, 0.12);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--shadow--light: 0 2px 12px 0 rgba(0, 0, 0, 0.07);
+
+	// Radius
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--radius--xl: 12px;
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--radius--lg: 8px;
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--radius: 4px;
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--radius--sm: 2px;
+
+	// Border
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--border-color: var(--color-border-base);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--border-color--light: var(--color-border-secondary);
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--border-style: solid;
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--border-width: 1px;
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--border: var(--border-width) var(--border-style) var(--border-color);
+
+	// Checkbox overrides
+	--checkbox--checked--icon-color: var(--color-font-inverse);
+
+	// Button primary overrides (replacing orange with primary)
+	--button--color--text--primary: var(--color-font-inverse);
+	--button--color--background--primary: var(--color-primary-base);
+	--button--border-color--primary: var(--color-primary-base);
+	--button--color--background--primary--hover-active-focus: var(--color-primary-active);
+	--button--border-color--primary--hover-active: var(--color-primary-active);
+	--button--outline-color--primary--focus: rgba(var(--color-primary-rgb), 0.3);
+	--button--border-color--primary--disabled: var(--color-primary-subdued);
+	--button--color--background--primary--disabled: var(--color-primary-subdued);
+	--button--border-color--primary: var(--color--primary);
+	--button--color--background--primary: var(--color--primary);
+	--button--border-color--primary--hover-active: var(--color--primary--tint-1);
+
+	// Button secondary overrides (replacing orange with primary)
+	--button--color--text--secondary--hover-active-focus: var(--color-primary-active);
+	--button--border-color--secondary--hover-active-focus: var(--color-primary-base);
+	--button--color--background--secondary--hover: var(--color-primary-subdued);
+	--button--color--background--secondary--active-focus: var(--color-primary-subdued);
+	--button--outline-color--secondary--focus: rgba(var(--color-primary-rgb), 0.3);
+
+	// Button highlight overrides (replacing orange with primary)
+	--button--color--text--highlight--hover-active-focus: var(--color-primary-active);
+
+	// Node creator button overrides (replacing orange with primary)
+	--node-creator--button--color--text--hover: var(--color-primary-base);
+	--node-creator--button--border-color--hover: var(--color-primary-base);
+	--node-creator--button--color--background: var(--color-primary-subdued);
+
+	// NDV droppable parameter overrides (replacing orange with primary)
+	--ndv--droppable-parameter--color: var(--color-primary-base);
+	--ndv--droppable-parameter--color--background: var(--color-primary-subdued);
+
+	// Icon overrides (replacing orange with primary)
+	--icon--color--hover: var(--color-primary-base);
+
+	// Menu overrides
+	--menu--color--background: var(--color-navigation-side-base);
+	--menu--color--background--hover: var(--color-navigation-side-active);
+	--menu--color--background--active: var(--color-navigation-side-active);
+}

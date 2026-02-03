@@ -14,6 +14,10 @@ onMounted(() => {
 
 <template>
 	<div ref="layout" class="app-grid" :class="$style.appGrid">
+		<!-- @jamf - added topnav slot -->
+		<div v-if="!!$slots.topnav" id="topnav" :class="$style.topnav">
+			<slot name="topnav" />
+		</div>
 		<div v-if="!!$slots.banners" id="banners" :class="$style.banners">
 			<slot name="banners" />
 		</div>
@@ -47,11 +51,17 @@ onMounted(() => {
 	width: 100%;
 	grid-area: layout;
 	grid-template-areas:
+		'topnav topnav topnav'
 		'banners banners banners'
 		'sidebar header aside'
 		'sidebar content aside';
 	grid-template-columns: auto 1fr auto;
-	grid-template-rows: auto auto 1fr;
+	grid-template-rows: auto auto auto 1fr;
+}
+
+.topnav {
+	grid-area: topnav;
+	height: calc(var(--size-navigation-top) + 1px);
 }
 
 .banners {

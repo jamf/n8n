@@ -2,6 +2,7 @@
 /** The primitives should not be used directly in components and other UI elements.
 /** They can be only mapped to tokens.
 /** Tokens should be used instead in components and other UI elements **/
+@use '@jamf/design-system-shared/dist/jamf-design-system.bundle.scss' as *;
 
 @mixin primitives {
 	--color--white-alpha-100: hsla(220, 1%, 100%, 0.1);
@@ -210,5 +211,9 @@
 }
 
 :root {
+	// @jamf - include jamf design system primitives
+	@include primary-font();
+	@include v2-size();
 	@include primitives;
+	@include coreV2();
 }
