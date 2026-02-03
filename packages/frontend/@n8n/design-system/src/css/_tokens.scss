@@ -1,4 +1,6 @@
 @use 'sass:math';
+@use '@jamf/design-system-shared/dist/jamf-design-system.bundle.scss' as *;
+@use './tokens.jamf' as *;
 
 /**
  * CSS Variable Naming Migration with Backwards Compatibility
@@ -835,6 +837,10 @@
 		1,
 		1
 	);
+
+	// @jamf - include jamf mixin to add custom properties for jamf design system
+	@include v2-light();
+	@include jamf;
 }
 
 :root {

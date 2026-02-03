@@ -5,6 +5,7 @@ import AppModals from '@/app/components/app/AppModals.vue';
 import AppCommandBar from '@/app/components/app/AppCommandBar.vue';
 import AppLayout from '@/app/components/app/AppLayout.vue';
 import AppChatPanel from '@/app/components/app/AppChatPanel.vue';
+import TopNav from '@/app/jamf/TopNav.vue';
 
 import { useHistoryHelper } from '@/app/composables/useHistoryHelper';
 import { useBackendStatus } from '@/app/composables/useBackendStatus';
@@ -96,6 +97,9 @@ useExposeCssVar('--ask-assistant--floating-button--margin-bottom', askAiFloating
 	<BaseLayout v-else id="n8n-app" :class="$style.app">
 		<template #banners>
 			<AppBanners />
+		</template>
+		<template #topnav>
+			<TopNav />
 		</template>
 		<AppLayout @mounted="setLayoutRef">
 			<RouterView />

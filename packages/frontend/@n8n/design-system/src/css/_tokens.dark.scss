@@ -1,6 +1,16 @@
 @use 'sass:math';
+@use '@jamf/design-system-shared/dist/jamf-design-system.bundle.scss' as *;
+@use './tokens.jamf' as *;
+
+// hsl(207, 100%, 59%)
 
 @mixin theme {
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--primary--h: 207;
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--primary--s: 100%;
+	/* stylelint-disable-next-line @n8n/css-var-naming */
+	--color--primary--l: 59%;
 	// Primary tokens
 	--color--danger: var(--color--red-400);
 
@@ -547,14 +557,21 @@
 
 	--command-bar-item--color--background--hover: var(--color--background--light-1);
 	--command-bar--shadow: 0 15px 45px 0 hsla(0, 0%, 0%, 0.25), 0 5px 10px 0 hsla(0, 0%, 0%, 0.15);
+
+	// @jamf - include jamf overrides for dark theme
+	@include jamf;
 }
 
 body[data-theme='dark'] {
+	//  @jamf - include jamf design system overrides for dark theme
+	@include v2-dark;
 	@include theme;
 }
 
 @media (prefers-color-scheme: dark) {
 	body:not([data-theme]) {
+		//  @jamf - include jamf design system overrides for dark theme
+		@include v2-dark;
 		@include theme;
 	}
 }

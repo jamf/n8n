@@ -22,6 +22,7 @@
     "test:dev": "vitest --silent=false"
   },
   "dependencies": {
+    "@jamf/design-system-web-components-next": "5.11.3",
     "@codemirror/autocomplete": "catalog:",
     "@codemirror/commands": "catalog:",
     "@codemirror/lang-css": "catalog:",
